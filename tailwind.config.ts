@@ -8,9 +8,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        EBGaramond: ["var(--font-EB-Garamond)"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#EDD2C1",
+        secondary: "#FDECE4",
       },
     },
   },
