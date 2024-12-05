@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-function Card({ title, description, image }: any) {
+type CardProps = {
+  title: string;
+  description: string[];
+  image: string;
+};
+function Card({ title, description, image }: CardProps) {
   return (
     <div>
       <div>
