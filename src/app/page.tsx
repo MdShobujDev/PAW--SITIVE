@@ -4,9 +4,9 @@ import CardImage_3 from "@/../public/images/card-img-3.png";
 import image_1 from "@/../public/images/image-1.jpg";
 import image_2 from "@/../public/images/image-2.jpg";
 import Card from "@/components/Card";
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { PiPawPrintThin } from "react-icons/pi";
 
 export default function Home() {
@@ -37,9 +37,12 @@ export default function Home() {
             UNVERBINDLICH.
           </p>
 
-          <button className=" text-xs mt-5 border-[1.5px] border-amber-700  cursor-pointer px-4 py-2 hover:border-amber-500 hover:shadow hover:shadow-amber-600 transition-all ease-linear rounded-md">
+          <Link
+            href="/contact-us"
+            className=" text-xs mt-5 border-[1.5px] border-amber-700  cursor-pointer px-4 py-2 hover:border-amber-500 hover:shadow hover:shadow-amber-600 transition-all ease-linear rounded-md"
+          >
             J E T Z T U N V E R B I N D L I C H <br />R E G I S T R I E R E N
-          </button>
+          </Link>
         </div>
       </section>
       <section className=" bg-primary py-20 px-10">
@@ -64,23 +67,7 @@ export default function Home() {
       <section className=" grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-7 w-full bg-white px-5 py-10">
         <Card
           title="Unsere Dienstleistungen – Ihre Vorteile"
-          description={`Versicherungsoptimierung ür Ihr
-          Haustier, absolut kostenrei und
-          unverbindlich.
-          Wir analysieren Ihre bestehenden
-          Versicherungen und zeigen Ihnen, wie Sie
-          dabei sparen und gleichzeitig Gutes tun
-          können.
-          Transparente Prozesse
-          Die Dierenz aus der Optimierung ließt
-          bei schritlicher Bestätigung und nach
-          Umstellung des Vertrags, automatisch und
-          vollständig in den Tierschutz – Sie müssen
-          sich um nichts weiter kümmern.
-          Patenschaten
-          bernehmen Sie eine Patenschat und
-          unterstützen Sie ein Tier, das dringend
-          Hile benötigt.`}
+          description={`Versicherungsoptimierung ür Ihr Haustier, absolut kostenrei und unverbindlich. Wir analysieren Ihre bestehenden Versicherungen und zeigen Ihnen, wie Sie dabei sparen und gleichzeitig Gutes tun können. Transparente Prozesse Die Dierenz aus der Optimierung ließt bei schritlicher Bestätigung und nach Umstellung des Vertrags automatisch und vollständig in den Tierschutz – Sie müssen sich um nichts weiter kümmern. Patenschaten bernehmen Sie eine Patenschat und unterstützen Sie ein Tier, das dringend Hile benötigt.`}
           image={CardImage_1}
         />
         <Card
@@ -156,41 +143,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer className=" bg-secondary px-10 py-5">
-        <div className=" text-xl font-light text-amber-700 mb-20">
-          <h4>PAW-SITIVE</h4>
-        </div>
-        <div className=" text-sm font-light mb-3">
-          <h3>Ditzingerstraße 39</h3>
-          <h3>70839 Gerlingen</h3>
-        </div>
-        <div className=" flex items-center justify-between">
-          <div className=" text-sm">
-            <h3>Call: +49 176 66843841</h3>
-            <h3>Email: info@paw-sitive.de</h3>
-          </div>
-          <div className=" flex items-center gap-3">
-            <Link
-              href="#"
-              className=" bg-amber-600 p-2 rounded-full text-white text-xl hover:scale-90 transition-all ease-linear duration-150"
-            >
-              <FaFacebookF />
-            </Link>
-            <Link
-              href="#"
-              className=" bg-amber-600 p-2 rounded-full text-white text-xl hover:scale-90 transition-all ease-linear duration-150"
-            >
-              <FaXTwitter />
-            </Link>
-            <Link
-              href="#"
-              className=" bg-amber-600 p-2 rounded-full text-white text-xl hover:scale-90 transition-all ease-linear duration-150"
-            >
-              <FaInstagram />
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
