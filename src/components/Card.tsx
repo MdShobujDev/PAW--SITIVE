@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type CardProps = {
   title: string;
-  description: string[];
-  image: string;
+  description: string;
+  image: StaticImageData;
 };
 function Card({ title, description, image }: CardProps) {
   return (
