@@ -12,7 +12,7 @@ import { PiPawPrintThin } from "react-icons/pi";
 export default function Home() {
   return (
     <div className=" max-w-5xl mx-auto">
-      <section className=" grid grid-cols-2 bg-secondary">
+      <section className=" min-[750px]:grid-cols-2 grid grid-cols-1 bg-secondary">
         <div>
           <Image className=" w-full h-full" src={image_1} alt="img" />
         </div>
@@ -64,7 +64,7 @@ export default function Home() {
           <h2 className="text-secondary text-sm">PAW-SITIVE</h2>
         </div>
       </section>
-      <section className=" grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-7 w-full bg-white px-5 py-10">
+      <section className="grid  min-[650px]:grid-cols-3 min-[450px]:grid-cols-2 grid-cols-1  gap-7 w-full bg-white px-5 py-10">
         <Card
           title="Unsere Dienstleistungen – Ihre Vorteile"
           description={`Versicherungsoptimierung ür Ihr Haustier, absolut kostenrei und unverbindlich. Wir analysieren Ihre bestehenden Versicherungen und zeigen Ihnen, wie Sie dabei sparen und gleichzeitig Gutes tun können. Transparente Prozesse Die Dierenz aus der Optimierung ließt bei schritlicher Bestätigung und nach Umstellung des Vertrags automatisch und vollständig in den Tierschutz – Sie müssen sich um nichts weiter kümmern. Patenschaten bernehmen Sie eine Patenschat und unterstützen Sie ein Tier, das dringend Hile benötigt.`}
@@ -81,11 +81,15 @@ export default function Home() {
           image={CardImage_3}
         />
       </section>
-      <section className="grid grid-cols-2 items-center bg-primary">
-        <div>
-          <Image src={image_2} alt="image_2" />
+      <section className="grid min-[750px]:grid-cols-2 grid-cols-1 items-center bg-primary">
+        <div className=" w-full">
+          <Image
+            className=" object-cover w-full min-[750px]:h-auto h-80"
+            src={image_2}
+            alt="image_2"
+          />
         </div>
-        <div className=" px-14">
+        <div className=" px-14 py-5">
           <h2 className=" text-center text-4xl font-light">PAW-SITIVE</h2>
           <div className=" font-light text-center mt-7">
             <p>
@@ -116,7 +120,7 @@ export default function Home() {
           </div>
           <h2 className="text-center font-light text-3xl">KUNDEN FEEDBACK</h2>
         </div>
-        <div className=" my-10 grid grid-cols-3 gap-5">
+        <div className=" my-10 grid min-[620px]:grid-cols-3 min-[450px]:grid-cols-2 grid-cols-1 gap-5">
           <div>
             <p className=" text-sm text-center font-medium italic">
               “Die Kontaktaufnahme war sehr <br />
