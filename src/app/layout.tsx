@@ -1,5 +1,6 @@
 import { EBGaramond } from "@/utils/customFonts";
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 // const geistSans = localFont({
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${EBGaramond.variable} font-EBGaramond antialiased bg-secondary/40`}
       >
+        <Toaster />
         {children}
       </body>
     </html>

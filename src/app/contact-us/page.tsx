@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { IoMdReturnLeft } from "react-icons/io";
 
 function ContactUs() {
@@ -14,7 +15,6 @@ function ContactUs() {
     animalName: "",
     age: "",
   });
-  const [status, setStatus] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,7 +22,6 @@ function ContactUs() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus(null);
 
     try {
       const response = await axios.post("/api/contact", formData, {
@@ -30,7 +29,7 @@ function ContactUs() {
       });
       console.log(response);
       if (response.status === 200) {
-        setStatus("Message sent successfully!");
+        toast.success("Message sent successfully!");
         setFormData({
           name: "",
           email: "",
@@ -39,12 +38,13 @@ function ContactUs() {
           age: "",
         });
       } else {
-        setStatus("Failed to send message. Please try again.");
+        toast.error("Failed to send message. Please try again.");
         console.log(response);
       }
     } catch (error) {
       console.error("Error:", error);
-      setStatus("An error occurred. Please try again later.");
+
+      toast.error("An error occurred. Please try again later.");
     }
   };
 
@@ -160,7 +160,6 @@ function ContactUs() {
             </div>
           </form>
         </div>
-        {status && <p className="text-center mt-4 font-semibold">{status}</p>}
       </div>
       <Footer />
     </div>
