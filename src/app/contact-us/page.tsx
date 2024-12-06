@@ -1,6 +1,7 @@
 "use client";
 
 import Footer from "@/components/Footer";
+import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
 import { IoMdReturnLeft } from "react-icons/io";
@@ -24,13 +25,11 @@ function ContactUs() {
     setStatus(null);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
+      const response = await axios.post("/api/contact", formData, {
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
       });
-
-      if (response.ok) {
+      console.log(response);
+      if (response.status === 200) {
         setStatus("Message sent successfully!");
         setFormData({
           name: "",
@@ -41,6 +40,7 @@ function ContactUs() {
         });
       } else {
         setStatus("Failed to send message. Please try again.");
+        console.log(response);
       }
     } catch (error) {
       console.error("Error:", error);
