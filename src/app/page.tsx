@@ -17,9 +17,9 @@ export default function Home() {
           <Image className=" w-full h-full" src={image_1} alt="img" />
         </div>
         <div className=" px-10 py-8 flex flex-col items-center">
-          <h2 className="text-xs">P A W- S I T I V E</h2>
-          <p className=" text-xs">
-            D I E I N N O V A T I O N I M T I E R S C H U T Z
+          <h2 className="text-xs">P A W - S I T I V E</h2>
+          <p className=" text-xs tracking-[2.5px]">
+            DIE INNOVATION IM TIERSCHUTZ
           </p>
           <p className=" text-sm my-6 italic">
             Gemeinsam für das Wohl der Tiere
@@ -39,9 +39,10 @@ export default function Home() {
 
           <Link
             href="/contact-us"
-            className=" text-xs mt-5 border-[1.5px] border-amber-700  cursor-pointer px-4 py-2 hover:border-amber-500 hover:shadow hover:shadow-amber-600 transition-all ease-linear rounded-md"
+            className=" text-xs mt-5 border-[1.5px] border-amber-700  cursor-pointer px-4 py-2 hover:border-amber-500 hover:shadow hover:shadow-amber-600 transition-all ease-linear rounded-md tracking-[2.5px] text-center"
           >
-            J E T Z T U N V E R B I N D L I C H <br />R E G I S T R I E R E N
+            JETZT UNVERBINDLICH <br />
+            REGISTRIEREN
           </Link>
         </div>
       </section>
@@ -67,17 +68,17 @@ export default function Home() {
       <section className="grid  min-[650px]:grid-cols-3 min-[450px]:grid-cols-2 grid-cols-1  gap-7 w-full bg-white px-5 py-10">
         <Card
           title="Unsere Dienstleistungen – Ihre Vorteile"
-          description={`Versicherungsoptimierung ür Ihr Haustier, absolut kostenrei und unverbindlich. Wir analysieren Ihre bestehenden Versicherungen und zeigen Ihnen, wie Sie dabei sparen und gleichzeitig Gutes tun können. Transparente Prozesse Die Dierenz aus der Optimierung ließt bei schritlicher Bestätigung und nach Umstellung des Vertrags automatisch und vollständig in den Tierschutz – Sie müssen sich um nichts weiter kümmern. Patenschaten bernehmen Sie eine Patenschat und unterstützen Sie ein Tier, das dringend Hile benötigt.`}
+          description={`Versicherungsoptimierung für Ihr Haustier, absolut kostenfrei und unverbindlich. Wir analysieren Ihre bestehenden Versicherungen und zeigen Ihnen, wie Sie dabei sparen und gleichzeitig Gutes tun können. Transparente Prozesse: Die Differenz aus der Optimierung fließt bei schriftlicher Bestätigung und nach Umstellung des Vertrags automatisch und vollständig in den Tierschutz – Sie müssen sich um nichts weiter kümmern. Patenschaften: Ubernehmen Sie eine Patenschaft und unterstützen Sie ein Tier, das dringend Hilfe benötigt.`}
           image={CardImage_1}
         />
         <Card
-          title="Wie können Sie helen? W"
-          description={`Unsere Mission ist es, den Tierschutz zu stärken, und Sie können dabei eine zentrale Rolle spielen. Indem wir beispielsweise Ihre Tierkrankenversicherung überprüen und optimieren, wird eine potenzielle Ersparnis erzielt. Die Dierenz zwischen dem alten und dem neuen Beitrag (die Ersparnis von 12 Monatsbeiträgen) ließt direkt als Versorgungspaket in den Tierschutz. Sie unterstützen damit nicht nur Ihr eigenes Tier, sondern helen gleichzeitig auch unzähligen Tieren in Not – einach und nachhaltig. Zusätzlich bieten wir Ihnen die Möglichkeit, Patenschaten ür Tiere zu übernehmen oder einmalige Geldspenden zu leisten. So können Sie aktiv die Lebensbedingungen von Tieren verbessern.`}
+          title="Wie können Sie helfen?"
+          description={`Unsere Mission ist es, den Tierschutz zu stärken, und Sie können dabei eine zentrale Rolle spielen. Indem wir beispielsweise Ihre Tierkrankenversicherung überprüfen und optimieren, wird eine potenzielle Ersparnis erzielt. Die Differenz zwischen dem alten und dem neuen Beitrag (die Ersparnis von 12 Monatsbeiträgen) fließt direkt als Versorgungspaket in den Tierschutz. Sie unterstützen damit nicht nur Ihr eigenes Tier, sondern helfen gleichzeitig auch unzähligen Tieren in Not – einfach und nachhaltig. Zusätzlich bieten wir Ihnen die Möglichkeit, Patenschaften ür Tiere zu übernehmen oder einmalige Geldspenden zu leisten. So können Sie aktiv die Lebensbedingungen von Tieren verbessern.`}
           image={CardImage_2}
         />
         <Card
-          title="arum Ihr Beitrag einen Unterschied macht?"
-          description={`Tiere können nicht ür sich selbst sprechen, doch gemeinsam können wir ihnen eine Stimme geben.Mit jeder optimierten Versicherung, jeder inanziellen Unterstützung und jeder Patenschat schaen wir positive Veränderungen. Ihr Engagement bei Paw-sitive ist nicht nur eine Entscheidung ür das eigene Tierwohl, sondern ein direkter Beitrag zum Schutz und zur Rettung von Tieren in Not.`}
+          title="Warum Ihr Beitrag einen Unterschied macht?"
+          description={`Tiere können nicht für sich selbst sprechen, doch gemeinsam können wir ihnen eine Stimme geben.Mit jeder optimierten Versicherung, jeder finanziellen Unterstützung und jeder Patenschaft schaffen wir positive Veränderungen. Ihr Engagement bei Paw-sitive ist nicht nur eine Entscheidung für das eigene Tierwohl, sondern ein direkter Beitrag zum Schutz und zur Rettung von Tieren in Not.`}
           image={CardImage_3}
         />
       </section>
@@ -91,7 +92,7 @@ export default function Home() {
         </div>
         <div className=" px-14 py-5">
           <h2 className=" text-center text-4xl font-light">PAW-SITIVE</h2>
-          <div className=" font-light text-center mt-7">
+          <div className=" font-light text-center mt-7 ">
             <p>
               steht für nachhaltigen Tierschutz und verantwortungsvolle Hilfe.
               Gemeinsam mit Ihnen schaffen wir eine Welt, in der Tiere
