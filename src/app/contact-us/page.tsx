@@ -9,17 +9,17 @@ import { IoMdReturnLeft } from "react-icons/io";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     telephone: "",
     animalName: "",
-    age: "",
+    animalAge: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -27,23 +27,21 @@ function ContactUs() {
       const response = await axios.post("/api/contact", formData, {
         headers: { "Content-Type": "application/json" },
       });
-      console.log(response);
       if (response.status === 200) {
         toast.success("Message sent successfully!");
         setFormData({
-          name: "",
+          firstName: "",
+          lastName: "",
           email: "",
           telephone: "",
           animalName: "",
-          age: "",
+          animalAge: "",
         });
       } else {
         toast.error("Failed to send message. Please try again.");
-        console.log(response);
       }
     } catch (error) {
       console.error("Error:", error);
-
       toast.error("An error occurred. Please try again later.");
     }
   };
@@ -56,11 +54,11 @@ function ContactUs() {
             <IoMdReturnLeft />
           </div>
           <span className="hidden group-hover:block transition-all ease-linear duration-300 absolute text-sm bg-amber-500 w-24 py-1 rounded-md px-2 top-1 left-10">
-            Return Home
+            Heimkehr
           </span>
         </Link>
         <h1 className="text-3xl text-amber-700 pt-10 font-bold text-center">
-          Contact With Us
+          Kontakt mit uns
         </h1>
         <div className="flex items-center justify-center py-14 w-full">
           <form
@@ -70,16 +68,33 @@ function ContactUs() {
             <div className="flex flex-col gap-1 w-full">
               <label
                 className="text-amber-700 font-medium text-lg"
-                htmlFor="name"
+                htmlFor="firstName"
               >
-                Full Name :
+                Vorname :
               </label>
               <input
                 className="border-2 rounded border-amber-500 bg-transparent outline-none px-2 py-2"
                 type="text"
-                name="name"
-                id="name"
-                value={formData.name}
+                name="firstName"
+                id="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="flex flex-col gap-1 w-full">
+              <label
+                className="text-amber-700 font-medium text-lg"
+                htmlFor="lastName"
+              >
+                Nachname :
+              </label>
+              <input
+                className="border-2 rounded border-amber-500 bg-transparent outline-none px-2 py-2"
+                type="text"
+                name="lastName"
+                id="lastName"
+                value={formData.lastName}
                 onChange={handleChange}
                 required
               />
@@ -89,7 +104,7 @@ function ContactUs() {
                 htmlFor="email"
                 className="text-amber-700 font-medium text-lg"
               >
-                Your Email :
+                Ihre E-Mail :
               </label>
               <input
                 className="border-2 rounded border-amber-500 bg-transparent outline-none px-2 py-2"
@@ -106,7 +121,7 @@ function ContactUs() {
                 htmlFor="telephone"
                 className="text-amber-700 font-medium text-lg"
               >
-                Telephone Number :
+                Telefonnummer :
               </label>
               <input
                 className="border-2 rounded border-amber-500 bg-transparent outline-none px-2 py-2"
@@ -122,7 +137,7 @@ function ContactUs() {
                 htmlFor="animalName"
                 className="text-amber-700 font-medium text-lg"
               >
-                Your Animal Name :
+                Ihr Tiername :
               </label>
               <input
                 className="border-2 rounded border-amber-500 bg-transparent outline-none px-2 py-2"
@@ -135,17 +150,17 @@ function ContactUs() {
             </div>
             <div className="flex flex-col gap-1 w-full">
               <label
-                htmlFor="age"
+                htmlFor="animalAge"
                 className="text-amber-700 font-medium text-lg"
               >
-                Your Animal Age:
+                Ihr Tieralter :
               </label>
               <input
                 className="border-2 rounded border-amber-500 bg-transparent outline-none px-2 py-2"
                 type="number"
-                name="age"
-                id="age"
-                value={formData.age}
+                name="animalAge"
+                id="animalAge"
+                value={formData.animalAge}
                 onChange={handleChange}
               />
             </div>
@@ -155,7 +170,7 @@ function ContactUs() {
                 className="bg-amber-600 text-white px-20 py-3 rounded-md text-lg font-medium hover:bg-amber-500 transition-all ease-linear duration-150"
                 type="submit"
               >
-                SEND
+                SCHICKEN
               </button>
             </div>
           </form>

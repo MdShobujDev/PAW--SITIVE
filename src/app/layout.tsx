@@ -1,3 +1,4 @@
+import NavBar from "@/components/NavBar";
 import { EBGaramond } from "@/utils/customFonts";
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${EBGaramond.variable} font-EBGaramond antialiased bg-secondary/40`}
       >
         <Toaster />
+        <NavBar />
         {children}
       </body>
     </html>

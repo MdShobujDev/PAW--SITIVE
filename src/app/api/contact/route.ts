@@ -1,52 +1,53 @@
+import axios from "axios";
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, email, telephone, animalName, age } = body;
+    const formData = await request.json();
 
-    // Validate the required fields
-    if (!name || !email || !animalName || !age) {
+    // Get credentials from environment variables
+    const portalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
+    const formGuid = process.env.NEXT_PUBLIC_HUBSPOT_FORM_GUID;
+    const accessToken = process.env.HUBSPOT_ACCESS_TOKEN;
+
+    if (!portalId || !formGuid || !accessToken) {
       return NextResponse.json(
-        { message: "Missing required fields" },
-        { status: 400 }
+        { error: "Missing HubSpot credentials" },
+        { status: 500 }
       );
     }
 
-    // Nodemailer transporter setup
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL, // Your Gmail address
-        pass: process.env.APP_PASSWORD, // Your Gmail app password
+    // HubSpot API endpoint for form submission
+    const hubspotUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`;
+
+    // Prepare the payload for HubSpot
+    const payload = {
+      fields: [
+        { name: "firstname", value: formData.firstName },
+        { name: "lastname", value: formData.lastName },
+        { name: "email", value: formData.email },
+        { name: "telephone", value: formData.telephone },
+        { name: "animal_name", value: formData.animalName },
+        { name: "animal_age", value: formData.animalAge },
+      ],
+    };
+
+    // Send data to HubSpot
+    const response = await axios.post(hubspotUrl, payload, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
       },
     });
 
-    // Email content
-    const mailOptions = {
-      from: process.env.EMAIL,
-      to: process.env.EMAIL, // Your email to receive the message
-      subject: "New Contact Form Submission",
-      text: `Name: ${name}\nEmail: ${email}\nTelephone: ${telephone}\nAnimal Name: ${animalName}\nAnimal Age: ${age}`,
-      html: `
-        <h3>Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Telephone:</strong> ${telephone}</p>
-        <p><strong>Animal Name:</strong> ${animalName}</p>
-        <p><strong>Animal Age:</strong> ${age}</p>
-      `,
-    };
-
-    // Send email via Nodemailer
-    await transporter.sendMail(mailOptions);
-
-    return NextResponse.json({ message: "Email sent successfully!" });
-  } catch (error) {
-    console.error("Error sending email:", error);
+    return NextResponse.json({ success: true, data: response.data });
+  } catch (error: any) {
+    console.error(
+      "Error submitting to HubSpot:",
+      error.response?.data || error.message
+    );
     return NextResponse.json(
-      { message: "Error sending email." },
+      { error: "Failed to submit to HubSpot", details: error.response?.data },
       { status: 500 }
     );
   }
