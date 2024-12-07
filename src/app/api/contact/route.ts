@@ -41,13 +41,23 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true, data: response.data });
-  } catch (error: any) {
-    console.error(
-      "Error submitting to HubSpot:",
-      error.response?.data || error.message
-    );
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error)) {
+      // Handle Axios-specific errors
+      console.error(
+        "Error submitting to HubSpot:",
+        error.response?.data || error.message
+      );
+      return NextResponse.json(
+        { error: "Failed to submit to HubSpot", details: error.response?.data },
+        { status: 500 }
+      );
+    }
+
+    // Handle other unexpected errors
+    console.error("Unexpected error:", error);
     return NextResponse.json(
-      { error: "Failed to submit to HubSpot", details: error.response?.data },
+      { error: "An unexpected error occurred" },
       { status: 500 }
     );
   }
