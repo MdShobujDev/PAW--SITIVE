@@ -1,6 +1,5 @@
 "use client";
 
-import Footer from "@/components/Footer";
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
@@ -176,7 +175,6 @@ function ContactUs() {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

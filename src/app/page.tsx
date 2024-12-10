@@ -4,7 +4,6 @@ import CardImage_3 from "@/../public/images/card-img-3.png";
 import image_1 from "@/../public/images/image-1.jpg";
 import image_2 from "@/../public/images/image-2.jpg";
 import Card from "@/components/Card";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { PiPawPrintThin } from "react-icons/pi";
@@ -148,7 +147,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 function Footer() {
   return (
-    <footer className=" bg-secondary px-10 py-5">
+    <footer className="max-w-5xl mx-auto bg-secondary px-10 py-5">
       <div className=" text-xl font-light text-amber-700 mb-20">
         <h4>PAW-SITIVE</h4>
       </div>

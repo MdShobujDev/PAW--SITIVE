@@ -13,7 +13,9 @@ function NavBar() {
           <ul className=" flex gap-5 font-medium items-center ">
             <Link href="/">Heim</Link>
             <Link href="/contact-us">kontaktiere uns</Link>
-            <Link href="/about">Über uns</Link>
+            <Link href="/terms-conditions">
+              Allgemeine Geschäftsbedingungen
+            </Link>
           </ul>
         </div>
       </nav>

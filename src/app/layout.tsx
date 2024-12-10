@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { EBGaramond } from "@/utils/customFonts";
 import type { Metadata } from "next";
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Toaster />
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
