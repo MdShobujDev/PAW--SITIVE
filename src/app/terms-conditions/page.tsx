@@ -18,7 +18,7 @@ function TermsAndConditions() {
           <h2 className=" font-bold text-xl">§ 1 Geltungsbereich</h2>
           <p className=" text-sm font-medium">
             Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle
-            Dienstleistungen, die über die Webseite "Paw-Sitive"
+            Dienstleistungen, die über die Webseite Paw-Sitive
             {
               <a href="http://www.paw-sitive.de/">
                 (
