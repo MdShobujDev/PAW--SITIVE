@@ -3,10 +3,10 @@ import CardImage_2 from "@/../public/images/card-img-2.jpg";
 import CardImage_3 from "@/../public/images/card-img-3.png";
 import image_1 from "@/../public/images/image-1.jpg";
 import image_2 from "@/../public/images/image-2.jpg";
+import Logo from "@/../public/Logo_2.png";
 import Card from "@/components/Card";
 import Image from "next/image";
 import Link from "next/link";
-import { PiPawPrintThin } from "react-icons/pi";
 
 export default function Home() {
   return (
@@ -57,11 +57,10 @@ export default function Home() {
           Tierschutz beizutragen - ohne direkten Spendenaufruf, sondern durch
           eine clevere Optimierung Ihrer bestehenden Versicherungen.
         </p>
-        <div className=" flex flex-col items-center gap-1 mt-4">
-          <div className=" text-7xl text-secondary">
-            <PiPawPrintThin />
+        <div className=" flex  items-center justify-center  mt-4">
+          <div>
+            <Image src={Logo} alt="logo" width={100} />
           </div>
-          <h2 className="text-secondary text-sm">PAW-SITIVE</h2>
         </div>
       </section>
       <section className="grid  min-[650px]:grid-cols-3 min-[450px]:grid-cols-2 grid-cols-1  gap-7 w-full bg-white px-5 py-10">
@@ -116,7 +115,7 @@ export default function Home() {
       <section className=" bg-white px-10 py-12">
         <div className=" flex flex-col items-center">
           <div className=" text-6xl text-primary">
-            <PiPawPrintThin />
+            <Image src={Logo} alt="logo" width={100} />
           </div>
           <h2 className="text-center font-light text-3xl">KUNDEN FEEDBACK</h2>
         </div>
