@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function TermsAndConditions() {
   return (
     <section className=" max-w-5xl mx-auto py-8 bg-primary px-5">
@@ -17,39 +19,38 @@ function TermsAndConditions() {
         <div>
           <h2 className=" font-bold text-xl">§ 1 Geltungsbereich</h2>
           <p className=" text-sm font-medium">
-            Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle
-            Dienstleistungen, die über die Webseite Paw-Sitive
-            {
-              <a href="http://www.paw-sitive.de/">
-                (
-                <span className=" text-blue-600 underline">
-                  www.paw-sitive.de
-                </span>
-                )
-              </a>
-            }
-            angeboten werden. Mit der Inanspruchnahme unserer Dienstleistungen
-            erkennt der Kunde diese AGB an.
+            <span>{`Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Dienstleistungen, die über die Webseite "Paw-Sitive" `}</span>
+            <span>
+              <Link
+                href="http://www.paw-sitive.de/"
+                className=" text-blue-600 underline"
+              >
+                (www.paw-sitive.de)
+              </Link>
+            </span>
+            <span>{` angeboten werden. Mit der Inanspruchnahme unserer Dienstleistungen erkennt der Kunde diese AGB an. Änderungen dieser AGB werden dem Kunden rechtzeitig mitgeteilt.`}</span>
           </p>
         </div>
         <div>
           <h2 className=" font-bold text-xl">§ 2 Vertragspartner</h2>
           <p>Der Vertrag kommt zustande mit:</p>
           <p className=" font-medium">Paw-Sitive</p>
-          <p>Ditzinger Straße 39</p>
-          <p>70839 Gerlingen, Baden-Württemberg</p>
+          <p>Dominique Divljak Ditzinger Straße 39</p>
+          <p>Gerlingen, Baden-Württemberg, 70839 </p>
           <p className=" text-blue-600 ">📧 info@paw-sitive.de</p>
         </div>
         <div>
           <h2 className=" font-bold text-xl">§ 3 Dienstleistungen</h2>
-          <h3 className=" font-medium">Paw-Sitive bietet:</h3>
+          <h3 className=" font-medium">
+            Paw-Sitive bietet folgende Dienstleistungen an:
+          </h3>
           <ul className=" text-sm list-inside list-disc ml-2">
-            <li>Generierung von Spendengeldern für Tierbedürfnisse</li>
-            <li>Optimierung von Tierkrankenversicherungen</li>
+            <li>Generierung von Spendengeldern für Tierschutzprojekte</li>
+            <li>Beratung und Optimierung von Tierkrankenversicherungen</li>
           </ul>
           <p>
-            Details zu unseren Leistungen finden Sie auf unserer Webseite. Wir
-            passen unsere Angebote flexibel an Ihre Bedürfnisse an.
+            Die genauen Leistungen werden auf der Webseite detailliert
+            beschrieben und können je nach Bedarf des Kunden variieren.
           </p>
         </div>
         <div>
@@ -57,7 +58,9 @@ function TermsAndConditions() {
           <p>
             Durch die Anfrage von Dienstleistungen gibt der Kunde ein
             verbindliches Angebot ab. Der Vertrag kommt zustande, wenn wir die
-            Anfrage des Kunden durch eine Bestätigung per E-Mail annehmen.
+            Anfrage des Kunden durch eine Bestätigung per E-Mail annehmen. Diese
+            Bestätigung erfolgt innerhalb von 3 Werktagen nach Eingang der
+            Anfrage.
           </p>
         </div>
         <div>
@@ -66,8 +69,9 @@ function TermsAndConditions() {
           </h2>
           <p>
             Die Preise für unsere Dienstleistungen werden individuell vereinbart
-            und sind in der Auftragsbestätigung angegeben. Die Zahlung erfolgt
-            gemäß der in der Bestätigung festgelegten Bedingungen.
+            und sind in der Auftragsbestätigung angegeben. Alle Preise verstehen
+            sich zuzüglich der gesetzlichen Mehrwertsteuer. Die Zahlung erfolgt
+            gemäß den in der Bestätigung festgelegten Bedingungen.
           </p>
         </div>
         <div>
@@ -78,11 +82,15 @@ function TermsAndConditions() {
             Tag, an dem der Kunde die Bestätigung der Dienstleistung erhält. Um
             das Widerrufsrecht auszuüben, muss der Kunde uns mittels einer
             eindeutigen Erklärung (z. B. per Brief, Fax oder E-Mail)
-            informieren.
+            informieren. Das Widerrufsrecht besteht nicht bei Verträgen über
+            Dienstleistungen, die bereits vollständig erbracht wurden, wenn die
+            Ausführung mit vorheriger ausdrücklicher Zustimmung des Verbrauchers
+            begonnen hat.
           </p>
         </div>
         <div>
           <h2 className=" font-bold text-xl">§ 7 Gewährleistung </h2>
+
           <p>
             Es gelten die gesetzlichen Gewährleistungsrechte. Bei Mängeln haben
             die Kunden das Recht auf Nacherfüllung. Schlägt die Nacherfüllung
@@ -96,23 +104,27 @@ function TermsAndConditions() {
             Paw-Sitive haftet nicht für Schäden, die durch unsachgemäße Nutzung
             der angebotenen Dienstleistungen entstehen. Für leichte
             Fahrlässigkeit haften wir nur bei Verletzung wesentlicher
-            Vertragspflichten.
+            Vertragspflichten. Die Haftung für grobe Fahrlässigkeit und Vorsatz
+            bleibt unberührt.
           </p>
         </div>
         <div>
           <h2 className=" font-bold text-xl">§ 9 Datenschutz</h2>
           <p>
             Die personenbezogenen Daten des Kunden werden gemäß den geltenden
-            Datenschutzbestimmungen verarbeitet. Weitere Informationen sind in
-            unserer Datenschutzerklärung zu finden.
+            Datenschutzbestimmungen, insbesondere der
+            Datenschutz-Grundverordnung (DSGVO), verarbeitet. Weitere
+            Informationen sind in unserer Datenschutzerklärung zu finden, die
+            auf der Webseite einsehbar ist.
           </p>
         </div>
         <div>
           <h2 className=" font-bold text-xl">§ 10 Schlussbestimmungen</h2>
           <p>
             Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die
-            Gültigkeit der übrigen Bestimmungen unberührt. Es gilt das Recht der
-            BRD unter Ausschluss des UN-Kaufrechts.
+            Gültigkeit der übrigen Bestimmungen unberührt. Auf den Vertrag
+            findet das Recht der Bundesrepublik Deutschland Anwendung, unter
+            Ausschluss des UN-Kaufrechts.
           </p>
         </div>
         <div>
